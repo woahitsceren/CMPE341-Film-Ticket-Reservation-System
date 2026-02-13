@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Remove Customer</h1>
+<div class="card">
+  <form method="post" class="actions">
+    <div style="flex:1;">
+      <label>Customer ID</label>
+      <input name="customerid" required>
+    </div>
+    <div style="align-self:end;">
+      <button class="danger" type="submit">Remove</button>
+    </div>
+  </form>
+  <p class="small">If the customer has purchases, deletion may be blocked by integrity constraints.</p>
+</div>
+
+<h2>Existing Customers</h2>
+<table class="table">
+  <tr><th>ID</th><th>Name</th><th>Surname</th></tr>
+  {% for c in customers %}
+  <tr><td>{{c[0]}}</td><td>{{c[1]}}</td><td>{{c[2]}}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Ticket Management</h1>
+<p class="small">View, delete, and update tickets from UI.</p>
+
+<table class="table">
+  <tr>
+    <th>TicketID</th><th>Film</th><th>Date</th><th>Time</th><th>Hall</th>
+    <th>Seat</th><th>Price</th><th>Actions</th>
+  </tr>
+  {% for r in rows %}
+  <tr>
+    <td><b>{{ r[0] }}</b></td>
+    <td>{{ r[6] }}</td>
+    <td>{{ r[5] }}</td>
+    <td>{{ r[4] }}</td>
+    <td>{{ r[7] }}</td>
+    <td>{{ r[8] }}</td>
+    <td>{{ r[1] }}</td>
+    <td>
+      <div class="actions">
+        <a href="/admin/edit_ticket/{{ r[0] }}">Update Price</a>
+        <form method="post" action="/admin/delete_ticket/{{ r[0] }}" style="margin:0;">
+          <button class="danger" type="submit">Delete</button>
+        </form>
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy Ticket</title>
+</head>
+<body>
+
+<h1>Buy Ticket</h1>
+
+<!-- FORM 1: SHOWTIME SEÇ (GET) -->
+<form method="GET">
+    <label>Select Showtime</label>
+    <select name="showtime_id" onchange="this.form.submit()">
+        <option value="">-- choose --</option>
+        {% for s in showtimes %}
+            <option value="{{ s[0] }}"
+                {% if selected_showtime == s[0]|string %}selected{% endif %}>
+                {{ s[1] }} {{ s[2] }} • {{ s[3] }} • {{ s[4] }}
+            </option>
+        {% endfor %}
+    </select>
+</form>
+
+<hr>
+
+<!-- FORM 2: TICKET OLUŞTUR (POST) -->
+<form method="POST">
+
+    <!-- seçilen showtime POST'a taşınır -->
+    <input type="hidden" name="showtime_id" value="{{ selected_showtime }}">
+
+    <label>Customer</label>
+    <select name="customer_id" required>
+        <option value="">-- choose --</option>
+        {% for c in customers %}
+            <option value="{{ c[0] }}">
+                {{ c[0] }} • {{ c[1] }} {{ c[2] }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <label>Seat (available)</label>
+    <select name="seat_id" required>
+        <option value="">-- choose --</option>
+        {% for seat in available_seats %}
+            <option value="{{ seat[0] }}">{{ seat[1] }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Ticket Price</label>
+    <input type="text" name="price" value="120.00" required>
+
+    <button type="submit">Create Ticket</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Manage Showtimes</h1>
+<p class="small">Update show date/time to demonstrate UPDATE functionality.</p>
+
+<table class="table">
+  <tr><th>ID</th><th>Date</th><th>Time</th><th>Film</th><th>Hall</th><th>Action</th></tr>
+  {% for r in rows %}
+  <tr>
+    <td>{{ r[0] }}</td>
+    <td>{{ r[1] }}</td>
+    <td>{{ r[2] }}</td>
+    <td>{{ r[3] }}</td>
+    <td>{{ r[4] }}</td>
+    <td><a href="/admin/edit_showtime/{{ r[0] }}">Edit</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

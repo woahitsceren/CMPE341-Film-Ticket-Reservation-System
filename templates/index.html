@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome</h1>
+<p class="small">
+This interface demonstrates Oracle database connectivity and core operations for the Film-Ticket Reservation System.
+</p>
+
+<div class="grid">
+  <div class="card">
+    <h2>Films & Showtimes</h2>
+    <p class="small">View films by date/time (e.g., Monday/Tuesday schedule).</p>
+    <a href="/films">Open films page</a>
+  </div>
+
+  <div class="card">
+    <h2>Ticket Purchase</h2>
+    <p class="small">Select customer + showtime + seat and create a ticket.</p>
+    <a href="/buy_ticket">Buy a ticket</a>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Administrator Access</h2>
+  <p class="small">Manage customers, showtimes, and tickets.</p>
+  <a href="/admin">Go to Admin Panel</a>
+</div>
+{% endblock %}

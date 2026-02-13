@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Administrator Panel</h1>
+<p class="small">Manage database operations through the interface.</p>
+
+<div class="grid">
+  <div class="card">
+    <h2>Customer Operations</h2>
+    <ul>
+      <li><a href="/add_customer">Add New Customer</a></li>
+      <li><a href="/remove_customer">Remove Existing Customer</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Cinema Operations</h2>
+    <ul>
+      <li><a href="/admin/showtimes">Update Showtimes (Date/Time)</a></li>
+      <li><a href="/admin/tickets">Manage Tickets (View/Delete/Update)</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

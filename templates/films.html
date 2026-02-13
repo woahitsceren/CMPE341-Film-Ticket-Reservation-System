@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Films & Showtimes</h1>
+<p class="small">Schedule list ordered by date and time.</p>
+
+<table class="table">
+  <tr>
+    <th>Date</th><th>Time</th><th>Hall</th>
+    <th>Film</th><th>Type</th><th>Duration</th><th>Description</th>
+    <th>ShowtimeID</th>
+  </tr>
+  {% for r in rows %}
+  <tr>
+    <td><span class="badge">{{ r[0] }}</span></td>
+    <td>{{ r[1] }}</td>
+    <td>{{ r[2] }}</td>
+    <td><b>{{ r[3] }}</b></td>
+    <td>{{ r[4] }}</td>
+    <td>{{ r[5] }} min</td>
+    <td>{{ r[6] }}</td>
+    <td>{{ r[7] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

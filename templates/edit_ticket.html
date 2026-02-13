@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Ticket</h1>
+
+<div class="card">
+  <p class="small">TicketID: <b>{{ row[0] }}</b></p>
+  <form method="post" class="grid">
+    <div>
+      <label>Price</label>
+      <input name="price" value="{{ row[1] }}" required>
+    </div>
+    <div style="align-self:end;">
+      <button type="submit">Update</button>
+      <a class="small" style="margin-left:10px;" href="/admin/tickets">Back</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

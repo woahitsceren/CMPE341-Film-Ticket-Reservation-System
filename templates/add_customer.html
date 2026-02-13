@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Add New Customer</h1>
+<div class="card">
+  <form method="post">
+    <div class="grid">
+      <div>
+        <label>Name</label>
+        <input name="name" required>
+      </div>
+      <div>
+        <label>Surname</label>
+        <input name="surname" required>
+      </div>
+      <div>
+        <label>Email</label>
+        <input name="email" required>
+      </div>
+      <div>
+        <label>Phone (digits only)</label>
+        <input name="phone" required>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <button type="submit">Add Customer</button>
+    </div>
+  </form>
+</div>
+
+<h2>Existing Customers</h2>
+<table class="table">
+  <tr><th>ID</th><th>Name</th><th>Surname</th><th>Email</th><th>Phone</th></tr>
+  {% for c in customers %}
+  <tr>
+    <td>{{c[0]}}</td><td>{{c[1]}}</td><td>{{c[2]}}</td><td>{{c[3]}}</td><td>{{c[4]}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

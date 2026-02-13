@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Showtime</h1>
+
+<div class="card">
+  <p class="small">ShowtimeID: <b>{{ row[0] }}</b></p>
+  <form method="post" class="grid">
+    <div>
+      <label>ShowDate (YYYY-MM-DD)</label>
+      <input name="showdate" value="{{ row[1] }}" required>
+    </div>
+    <div>
+      <label>StartTime (HH:MM)</label>
+      <input name="starttime" value="{{ row[2] }}" required>
+    </div>
+    <div style="grid-column:1 / -1; margin-top:10px;">
+      <button type="submit">Update Showtime</button>
+      <a class="small" style="margin-left:10px;" href="/admin/showtimes">Back</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

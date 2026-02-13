@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ title if title else "Film-Ticket Reservation System" }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">Film-Ticket Reservation System</div>
+    <div class="nav">
+      <a href="/">Home</a>
+      <a href="/films">Films & Showtimes</a>
+      <a href="/buy_ticket">Buy Ticket</a>
+      <a href="/admin">Admin</a>
+    </div>
+  </div>
+
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+  <div class="footer">
+    CMPE341 • Oracle + Flask • Prototype Interface
+  </div>
+</body>
+</html>
