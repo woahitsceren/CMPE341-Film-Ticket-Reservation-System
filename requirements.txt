@@ -1,0 +1,4 @@
+flask
+oracledb
+
+pip install flask oracledb
